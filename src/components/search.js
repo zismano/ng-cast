@@ -3,15 +3,22 @@ angular.module('video-player')
 .component('search', {
   // TODO
   bindings: {
-    searchResults: '<',
-    result: '<' // for not using & function binding. Does nothing, to pass test 
+    result: '<', // for not using & function binding. Does nothing, to pass test 
+    service: '<'
   },
+// 
+  // controller: function(youTube) {
 
-  controller: function() {
-    this.result = () => {};  // does nothing, to pass test
-  },
+  //   this.$onInit = function() {
+  //     //console.log('search controller called');
+  //     //console.log(this);
+  //     //this.service.search('', this.result);
+  //   };
+    
+
+ // },
  
-  templateUrl: 'src/templates/search.html',  
+  templateUrl: 'src/templates/search.html'  
 
 });
 

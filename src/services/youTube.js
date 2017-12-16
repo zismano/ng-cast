@@ -3,7 +3,7 @@ angular.module('video-player')
   
   this.search = function(queryString, callback, maxResults = 5) {
     console.log('testAPI');
-    self = this;
+
     $http({
       method: 'GET',
       url: 'https://www.googleapis.com/youtube/v3/search',

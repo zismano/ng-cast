@@ -3,22 +3,21 @@ angular.module('video-player')
 .component('app', {
 
   controller: function(youTube) { // parameter required for youTube dependency injection
-    // this.videos = window.exampleVideoData;
-    // this.currentVideo = this.videos[0];
 
     this.selectVideo = (index) => {
       console.log(this);
       this.currentVideo = this.videos[index];
     };
 
-    this.youtubeService = youTube;  // binding youTube for search
+    this.youtube = youTube;  // binding youTube for search
+    this.result = (videoDataArray) => {
+      this.videos = videoDataArray;
+      this.currentVideo = videoDataArray[0];
+    };
 
     this.searchResults = (searchText) => {
       
-      this.youtubeService.search.call(this, searchText, (videoDataArray) => {
-        this.videos = videoDataArray;
-        this.currentVideo = this.videos[0];
-      });  // binding youTube for search
+      youTube.search.call(this, searchText, this.result);  // binding youTube for search
       
     };
 
