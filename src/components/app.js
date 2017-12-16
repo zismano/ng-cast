@@ -13,10 +13,12 @@ angular.module('video-player')
 
     this.youtubeService = youTube;  // binding youTube for search
 
-    this.searchResults = (youTube) => {
-      console.log('testInApp');
-      console.log(this);
-      this.youtubeService.getAPIResults();  // binding youTube for search
+    this.searchResults = (searchText) => {
+      //console.log('testInApp');
+      //console.log(this);
+      this.youtubeService.getAPIResults(searchText, this);  // binding youTube for search
+      //console.dir(results);
+      //this.videos = results;
     };
   },
 

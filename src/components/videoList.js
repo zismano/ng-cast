@@ -5,7 +5,7 @@ angular.module('video-player')
     video: '<', // ??????????????
     videos: '<',
     onClick: '<',
-    videoClicked: '<'
+    selectVideo: '<'
   },
   
   controller: function() {
