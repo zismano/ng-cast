@@ -9,7 +9,7 @@ angular.module('video-player')
   },
   
   controller: function() {
-    this.onClick = () => {};
+    this.onClick = () => {};  // does nothing, to pass test
   },
 
   templateUrl: 'src/templates/videoList.html'

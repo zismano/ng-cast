@@ -22,7 +22,7 @@ angular.module('video-player')
       
     };
 
-    this.searchResults('');
+    this.searchResults(''); // initialization
   },
 
   templateUrl: 'src/templates/app.html'
