@@ -4,26 +4,28 @@ angular.module('video-player')
 
   controller: function() {
     this.videos = window.exampleVideoData;
-    this.currVideo = this.videos[0];
+    this.currentVideo = this.videos[0];
 
-    this.clickedVideo = (index) => {
+    this.selectVideo = (index) => {
       console.log(this);
-      this.currVideo = this.videos[index];
+      this.currentVideo = this.videos[index];
     };
+
+    this.searchResults = () => {};
   },
 
   template: `<div id="app container">
   <nav class="navbar">
     <div class="col-md-6 col-md-offset-3">
-      <search><h5><em>search</em> component goes here</h5></search>
+      <search></search>
     </div>
   </nav>
   <div class="row">
     <div class="col-md-7">
-      <video-player video="$ctrl.currVideo" videos="$ctrl.videos"></video-player>
+      <video-player video="$ctrl.currentVideo" videos="$ctrl.videos"></video-player>
     </div>
     <div class="col-md-5">
-      <video-list videos="$ctrl.videos" video="$ctrl.currVideo" video-clicked="$ctrl.clickedVideo"><h5><em>videoList</em> component goes here</h5></video-list>
+      <video-list videos="$ctrl.videos" video="$ctrl.currentVideo" video-clicked="$ctrl.selectVideo"><h5><em>videoList</em> component goes here</h5></video-list>
     </div>
   <div>
   </div>`
