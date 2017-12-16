@@ -2,7 +2,6 @@ angular.module('video-player')
 .service('youTube', function($http) {
   
   this.search = function(queryString, callback, maxResults = 5) {
-    console.log('testAPI');
 
     $http({
       method: 'GET',
@@ -23,6 +22,7 @@ angular.module('video-player')
     }, function errorCallback(response) {
           // called asynchronously if an error occurs
           // or server returns response with an error status.
+      console.log('Error receiving data from API');
     });
   };
 
