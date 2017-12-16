@@ -2,7 +2,7 @@ angular.module('video-player')
 
 .component('app', {
 
-  controller: function() {
+  controller: function(youTube) {
     this.videos = window.exampleVideoData;
     this.currentVideo = this.videos[0];
 
@@ -12,6 +12,9 @@ angular.module('video-player')
     };
 
     this.searchResults = () => {};
+
+
+    youTube.getAPIResults();
   },
 
   template: `<div id="app container">
@@ -29,4 +32,6 @@ angular.module('video-player')
     </div>
   <div>
   </div>`
+
+
 });
