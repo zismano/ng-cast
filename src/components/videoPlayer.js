@@ -3,7 +3,8 @@ angular.module('video-player')
 .component('videoPlayer', {
   // TODO
   bindings: {
-    video: '<'
+    video: '<',
+    videos: '<'   // ????????????
   },
   template: `
     <div ng-if="$ctrl.video" class="video-player">
