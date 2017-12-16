@@ -3,8 +3,8 @@ angular.module('video-player')
 .component('app', {
 
   controller: function(youTube) { // parameter required for youTube dependency injection
-    this.videos = window.exampleVideoData;
-    this.currentVideo = this.videos[0];
+    // this.videos = window.exampleVideoData;
+    // this.currentVideo = this.videos[0];
 
     this.selectVideo = (index) => {
       console.log(this);
@@ -14,14 +14,15 @@ angular.module('video-player')
     this.youtubeService = youTube;  // binding youTube for search
 
     this.searchResults = (searchText) => {
-      //console.log('testInApp');
-      //console.log(this);
-      this.youtubeService.getAPIResults.call(this, searchText, (videoDataArray) => {
+      
+      this.youtubeService.search.call(this, searchText, (videoDataArray) => {
         this.videos = videoDataArray;
+        this.currentVideo = this.videos[0];
       });  // binding youTube for search
-      //console.dir(results);
-      //this.videos = results;
+      
     };
+
+    this.searchResults('');
   },
 
   templateUrl: 'src/templates/app.html'

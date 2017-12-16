@@ -1,9 +1,7 @@
 angular.module('video-player')
 .service('youTube', function($http) {
-  // TODO
-  // Simple GET request example:
-
-  this.getAPIResults = function(queryString, callback, maxResults = 5) {
+  
+  this.search = function(queryString, callback, maxResults = 5) {
     console.log('testAPI');
     self = this;
     $http({
@@ -22,7 +20,6 @@ angular.module('video-player')
           // when the response is available
       callback(response.data.items);
 
-      //component.videos = response.data.items;
     }, function errorCallback(response) {
           // called asynchronously if an error occurs
           // or server returns response with an error status.
