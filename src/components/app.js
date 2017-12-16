@@ -16,7 +16,9 @@ angular.module('video-player')
     this.searchResults = (searchText) => {
       //console.log('testInApp');
       //console.log(this);
-      this.youtubeService.getAPIResults(searchText, this);  // binding youTube for search
+      this.youtubeService.getAPIResults.call(this, searchText, (videoDataArray) => {
+        this.videos = videoDataArray;
+      });  // binding youTube for search
       //console.dir(results);
       //this.videos = results;
     };
