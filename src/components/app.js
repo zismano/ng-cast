@@ -14,7 +14,7 @@ angular.module('video-player')
   </nav>
   <div class="row">
     <div class="col-md-7">
-      <video-player><h5><em>videoPlayer</em> component goes here</h5></video-player>
+      <video-player ng-if="$ctrl.videos.length > 0" video="$ctrl.videos[0]"></video-player>
     </div>
     <div class="col-md-5">
       <video-list videos="$ctrl.videos"><h5><em>videoList</em> component goes here</h5></video-list>
