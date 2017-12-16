@@ -12,14 +12,6 @@ angular.module('video-player')
     this.onClick = () => {};
   },
 
-  template: `
-    <ul class="video-list">
-      <video-list-entry
-          index="$index"
-          video-clicked="$ctrl.videoClicked"
-          ng-repeat="video in $ctrl.videos track by $index"
-          video="video">
-      </video-list-entry>
-    </ul>`
+  templateUrl: 'src/templates/videoList.html'
 
 });

@@ -4,7 +4,7 @@ angular.module('video-player')
   // Simple GET request example:
 
   this.getAPIResults = function(queryString, callback, maxResults = 5) {
-    console.log('test');
+    console.log('testAPI');
 
     $http({
       method: 'GET',

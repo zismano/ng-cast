@@ -2,7 +2,7 @@ angular.module('video-player')
 
 .component('app', {
 
-  controller: function(youTube) {
+  controller: function(youTube) { // parameter required for youTube dependency injection
     this.videos = window.exampleVideoData;
     this.currentVideo = this.videos[0];
 
@@ -11,27 +11,16 @@ angular.module('video-player')
       this.currentVideo = this.videos[index];
     };
 
-    this.searchResults = () => {};
+    this.youtubeService = youTube;  // binding youTube for search
 
-
-    youTube.getAPIResults();
+    this.searchResults = (youTube) => {
+      console.log('testInApp');
+      console.log(this);
+      this.youtubeService.getAPIResults();  // binding youTube for search
+    };
   },
 
-  template: `<div id="app container">
-  <nav class="navbar">
-    <div class="col-md-6 col-md-offset-3">
-      <search></search>
-    </div>
-  </nav>
-  <div class="row">
-    <div class="col-md-7">
-      <video-player video="$ctrl.currentVideo" videos="$ctrl.videos"></video-player>
-    </div>
-    <div class="col-md-5">
-      <video-list videos="$ctrl.videos" video="$ctrl.currentVideo" video-clicked="$ctrl.selectVideo"><h5><em>videoList</em> component goes here</h5></video-list>
-    </div>
-  <div>
-  </div>`
+  templateUrl: 'src/templates/app.html'
 
 
 });
